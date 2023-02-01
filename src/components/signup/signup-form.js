@@ -71,7 +71,7 @@ const SignupForm = () => {
         <div className={styles.signup__buttonDiv}>
           <button
             className="default__button"
-            data-testid="signin-button"
+            data-testid="signup-button"
             disabled={active ? "" : "disabled"}
           >
             회원가입

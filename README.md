@@ -260,11 +260,11 @@ root
 
 ```
 
-1.  <strong>수정</strong> 버튼을 누를시, <strong>EditMode State</strong> 에 누른 버튼이 존재하는 List 의 id 를 저장합니다.
-2.  만약 <strong>EditMode</strong> 의 값이 <strong>현재 자기 자신이 속한 List의 id 와 같다면</strong> <strong>수정모드</strong> 가 활성화됩니다.
-3.  <strong>수정모드</strong> 가 활성화되면 List 에서는 span 이 Input 으로 변경됩니다.
-4.  EditInput 의 값을 State 안에 저장하고, <strong>제출</strong> 버튼을 누른다면 updateHandler 를 사용하여 수정된 값을 fetch(UPDATE) 합니다.
-5.  <strong>제출</strong> 이나 <strong>취소</strong> 를 누를경우, EditInput State 의 값을 비우고, EditMode 안의 값을 null 로 만들어, EditMode 를 종료합니다.
+  1.  수정  버튼을 누를시, EditMode State 에 누른 버튼이 존재하는 List 의 id 를 저장합니다.
+  2.  만약 EditMode 의 값이 현재 자기 자신이 속한 List의 id 와 같다면 수정모드 가 활성화됩니다.
+  3.  수정모드 가 활성화되면 List 에서는 span 이 Input 으로 변경됩니다.
+  4.  EditInput 의 값을 State 안에 저장하고, 제출 버튼을 누른다면 updateHandler 를 사용하여 수정된 값을 fetch(UPDATE) 합니다.
+  5.  제출 이나 취소 를 누를경우, EditInput State 의 값을 비우고, EditMode 안의 값을 null 로 만들어, EditMode 를 종료합니다.
 
 ```
 
