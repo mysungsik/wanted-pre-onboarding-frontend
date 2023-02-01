@@ -23,6 +23,7 @@ root
 └── src
     ├─ components      * 컴포넌트들이 들어있습니다.
     │ ├─ home
+    │ ├─ layout
     │ ├─ signin
     │ ├─ signup
     │ └─ todo
@@ -45,7 +46,7 @@ root
 
 <hr/>
 
-## 로그인 및 회원가입
+## &#10004;로그인 및 회원가입
 
 1. 이메일과 비밀번호의 유효성 검사
 2. 유효성을 통과하지 못한다면, button 에 disable 속성 부여
@@ -88,7 +89,7 @@ root
       } else {
         const responseData = await response.json();
         window.localStorage.setItem("access_token", responseData.access_token);
-        history.push("/todo");
+        window.location.replace("/todo");   // 페이지의 새로고침(리렌더)을 위해, window 를 사용하여, 페이지를 변경하였습니다.
       }
     };
 
@@ -144,8 +145,9 @@ root
 ```
 
 <hr/>
+<hr/>
 
-## TODO LIST
+## &#10004; TODO LIST
 
 1. /todo 에 접속하면 투두 리스트 목록을 볼 수 있습니다.
 2. 목록에는 TODO 의 내용과 완료여부(체크박스의 체크) 가 표시되게 합니다.
@@ -247,16 +249,24 @@ root
 
 - <strong> checkbox 업데이트의 경우</strong>
 
+```
+
 1. 해당 checkbox 가 check되어있는지, event.targe.check 를 인수로 사용하여, 함수를 실행합니다.
 2. 함수안에서 각 값을 가지고 fetch(UPDATE) 를 실행합니다.
 
+```
+
 - <strong> todo 값의 변화의 경우</strong>
+
+```
 
 1.  <strong>수정</strong> 버튼을 누를시, <strong>EditMode State</strong> 에 누른 버튼이 존재하는 List 의 id 를 저장합니다.
 2.  만약 <strong>EditMode</strong> 의 값이 <strong>현재 자기 자신이 속한 List의 id 와 같다면</strong> <strong>수정모드</strong> 가 활성화됩니다.
 3.  <strong>수정모드</strong> 가 활성화되면 List 에서는 span 이 Input 으로 변경됩니다.
 4.  EditInput 의 값을 State 안에 저장하고, <strong>제출</strong> 버튼을 누른다면 updateHandler 를 사용하여 수정된 값을 fetch(UPDATE) 합니다.
 5.  <strong>제출</strong> 이나 <strong>취소</strong> 를 누를경우, EditInput State 의 값을 비우고, EditMode 안의 값을 null 로 만들어, EditMode 를 종료합니다.
+
+```
 
 ```js
 
@@ -361,5 +371,13 @@ root
         <hr className="default__line" />
       </li>
     ))
+
+    return (
+      <div className={styles.todo}>
+        <h1> 할일 </h1>
+            ...
+        <ul className={styles.todo__lists}>{allTodoList}</ul>
+      </div>
+  );
 
 ```

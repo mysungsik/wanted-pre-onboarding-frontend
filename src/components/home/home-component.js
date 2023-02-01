@@ -8,7 +8,7 @@ const HomeComponent = () => {
     <div className={styles.homeComponent}>
       <h1> 홈페이지 </h1>
       <button className="default__button" onClick={() => history.push("/todo")}>
-        List 로 이동
+        TodoList 로 이동
       </button>
     </div>
   );

@@ -40,8 +40,6 @@ const SignupForm = () => {
     if (!response.ok) {
       return;
     } else {
-      const responseData = await response.json();
-      console.log(responseData);
       history.push("/signin");
     }
   };

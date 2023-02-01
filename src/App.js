@@ -17,7 +17,7 @@ function App() {
         <Route path="/todo" exact>
           <TodoPage />
         </Route>
-        <Route path="/">
+        <Route path="/" exact>
           <HomePage />
         </Route>
       </Switch>

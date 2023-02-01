@@ -1,14 +1,10 @@
 import { useState, useEffect } from "react";
-import { useHistory } from "react-router-dom";
 import styles from "./signin-form.module.css";
-
-// test12323@test.com ,12345678
 
 const SigninForm = () => {
   const [inputedEmail, setInputedEmail] = useState("");
   const [inputedPassword, setInputedPassword] = useState("");
   const [active, setActive] = useState(false);
-  const history = useHistory();
 
   useEffect(() => {
     signValidation(inputedEmail, inputedPassword);
@@ -44,7 +40,7 @@ const SigninForm = () => {
     } else {
       const responseData = await response.json();
       window.localStorage.setItem("access_token", responseData.access_token);
-      history.push("/todo");
+      window.location.replace("/todo");
     }
   };
 

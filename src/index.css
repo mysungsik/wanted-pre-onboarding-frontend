@@ -42,7 +42,6 @@ code {
 
 .todo__button {
   height: 2rem;
-  width: 3rem;
   border-radius: 5px;
   border: 0.5px solid;
   font-weight: 600;
@@ -56,7 +55,6 @@ code {
 
 .todo__button__ok {
   height: 2rem;
-  width: 3rem;
   border-radius: 5px;
   border: 0.5px solid;
   font-weight: 600;
@@ -71,7 +69,6 @@ code {
 
 .todo__button__cancel {
   height: 2rem;
-  width: 3rem;
   border-radius: 5px;
   border: 0.5px solid;
   font-weight: 600;
