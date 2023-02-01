@@ -158,7 +158,7 @@ root
 9. "수정모드" 가 활성화된다면 "span"이 "input" 으로 변하고 "제출", "취소"버튼이 만들어집니다.
 10. "제출"을 누르면 업데이트가, "취소"를 누르면 "수정모드" 가 종료됩니다.
 
-# 로직
+### 로직
 
 #### todolist 받아오기
 
@@ -167,7 +167,7 @@ root
   < components / todo / todo-form.js >
 
   const TodoForm = (props) => {
-    const { access_token } = props;
+    const { access_token } = props; // 상위 컴포넌트로부터 access_token 을 받아옵니다.
     const [todoList, setTodoList] = useState([]); // 투두 리스트 목록을 저장하는 state 입니다.
 
     useEffect(() => {
@@ -181,11 +181,11 @@ root
           method: "GET",
           headers: {
             "Content-Type": "application/json",
-            Authorization: `Bearer ${access_token}`,
+            Authorization: `Bearer ${access_token}`,  // access_token 을 사용해 서버와 통신합니다.
           },
         }
       );
-      if (response.ok) {-
+      if (response.ok) {
         const responseData = await response.json();
         setTodoList(responseData);    // 받아온 값을 State 에 저장하게됩니다.
       }
@@ -194,6 +194,8 @@ root
     ...
 
 ```
+
+<hr/>
 
 #### todolist 생성하기
 
@@ -239,20 +241,22 @@ root
 
 ```
 
+<hr/>
+
 #### todolist 업데이트하기 및 삭제
-  
+
 - <strong> checkbox 업데이트의 경우</strong>
 
-  1.  해당 checkbox 가 check되어있는지, event.targe.check 를 사용하여 함수를 실행합니다.
-      함수안에서 각 값을 가지고 fetch 를 실행합니다.
+1. 해당 checkbox 가 check되어있는지, event.targe.check 를 인수로 사용하여, 함수를 실행합니다.
+2. 함수안에서 각 값을 가지고 fetch(UPDATE) 를 실행합니다.
 
 - <strong> todo 값의 변화의 경우</strong>
 
-  1.  "수정" 버튼을 누를시, "EditMode" State 에 누른 버튼이 존재하는 List 의 id 를 저장합니다.
-  2.  만약 "EditMode" 의 값이 "현재 자기 자신이 속한 List의 id 와 같다면" 해당 "수정모드" 가 활성화됩니다.
-  3.  "수정모드" 가 활성화되면 List 에서는 span 이 Input 으로 변경됩니다.
-  4.  EditInput 의 값을 State 안에 저장하고, "제출" 버튼을 누른다면 updateHandler 를 사용하여 수정된 값을 fetch(UPDATE) 합니다.
-  5.  "제출" 이나 "취소" 를 누를경우, EditInput State 의 값을 비우고, EditMode 안의 값을 null 로 만들어, EditMode 를 종료합니다. 
+1.  <strong>수정</strong> 버튼을 누를시, <strong>EditMode State</strong> 에 누른 버튼이 존재하는 List 의 id 를 저장합니다.
+2.  만약 <strong>EditMode</strong> 의 값이 <strong>현재 자기 자신이 속한 List의 id 와 같다면</strong> <strong>수정모드</strong> 가 활성화됩니다.
+3.  <strong>수정모드</strong> 가 활성화되면 List 에서는 span 이 Input 으로 변경됩니다.
+4.  EditInput 의 값을 State 안에 저장하고, <strong>제출</strong> 버튼을 누른다면 updateHandler 를 사용하여 수정된 값을 fetch(UPDATE) 합니다.
+5.  <strong>제출</strong> 이나 <strong>취소</strong> 를 누를경우, EditInput State 의 값을 비우고, EditMode 안의 값을 null 로 만들어, EditMode 를 종료합니다.
 
 ```js
 
@@ -260,6 +264,10 @@ root
 
   const TodoForm = (props) => {
     const { access_token } = props;
+      ...
+    const [editTodo, setEditTodo] = useState("");
+    const [todoList, setTodoList] = useState([]);
+    const [editMode, setEditMode] = useState();
 
         ...
     const updateTodosHandler = async (id, todo, isCompleted) => {   // update api 를 사용하여 값을 업데이트합니다.
@@ -333,11 +341,11 @@ root
             </button>
           </div>
         ) : (
-          <div>       
-            <button                                     // "수정모드" 가 아니라면 "수정", "삭제" 버튼으로 변경됩니다.
-              className="todo__button__ok"
+          <div>
+            <button
+              className="todo__button__ok"    // "수정모드" 가 아니라면 "수정", "삭제" 버튼으로 변경됩니다.
               data-testid="modify-button"
-              onClick={() => setEditMode(item.id)}        // "수정" 버튼을 누르면 "수정모드" 가 활성화됩니다.
+              onClick={() => setEditMode(item.id)}  // "수정" 버튼을 누르면 "수정모드" 가 활성화됩니다.
             >
               수정
             </button>
@@ -355,7 +363,3 @@ root
     ))
 
 ```
-
-
-
-
