@@ -23,9 +23,10 @@ const TodoForm = (props) => {
         },
       }
     );
-    const responseData = await response.json();
-
-    setTodoList(responseData);
+    if (response.ok) {
+      const responseData = await response.json();
+      setTodoList(responseData);
+    }
   };
 
   const createTodosHandler = async (todo) => {
@@ -40,6 +41,7 @@ const TodoForm = (props) => {
       }),
     });
 
+    setNewTodo("");
     getTodosHandler();
   };
 
@@ -142,6 +144,7 @@ const TodoForm = (props) => {
         <input
           data-testid="new-todo-input"
           onChange={(e) => setNewTodo(e.target.value)}
+          value={newTodo}
         />
         <button
           className="todo__button"
