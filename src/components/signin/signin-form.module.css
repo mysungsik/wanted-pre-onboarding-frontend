@@ -1,0 +1,19 @@
+.signin {
+  background-color: var(--main-background-color);
+  width: 80%;
+  max-width: 45rem;
+  margin: 2rem auto;
+  border-radius: 10px;
+  padding: 1rem;
+}
+
+.signin__inputDiv {
+  display: grid;
+  width: 80%;
+  grid-template-columns: 1fr 1fr;
+  margin: 0.5rem auto;
+}
+
+.signin__buttonDiv {
+  margin: 1rem 0;
+}

@@ -1,0 +1,52 @@
+.todo {
+  width: 70%;
+  max-width: 50rem;
+  background-color: var(--main-background-color);
+  padding: 1rem;
+  margin: 1rem auto;
+  border-radius: 5px;
+}
+
+.todo__inputDiv input {
+  height: 1.5rem;
+  width: 20rem;
+  border-radius: 5px;
+  border: none;
+  margin: 0.5rem 1rem;
+}
+
+.todo__inputDiv input:focus {
+  background-color: var(--main-background-color-dark);
+}
+
+.todo__lists {
+  padding-left: 10%;
+  width: 80%;
+  max-width: 40rem;
+  margin: 1rem auto;
+  list-style: none;
+}
+
+.todo__list {
+  margin: 0.5rem auto;
+  display: grid;
+  align-items: center;
+  text-align: left;
+  grid-template-columns: 65% 35%;
+}
+
+.todo__list span {
+  margin-left: 0.5rem;
+}
+
+/* Edit Mode */
+.todo__editInput {
+  width: 80%;
+  height: 1.2rem;
+  border: none;
+  margin-left: 0.5rem;
+}
+
+.todo__editInput:focus {
+  background-color: var(--main-background-color-dark);
+}

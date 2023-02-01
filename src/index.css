@@ -1,13 +1,85 @@
+html {
+  --main-background-color: rgb(208, 215, 208);
+  --main-background-color-dark: rgb(180, 233, 174);
+  --main-button-color: rgb(145, 202, 145);
+  --main-button-color-hover: rgb(99, 187, 99);
+  --ok-button-color: rgb(142, 213, 209);
+  --ok-button-color-hover: rgb(126, 190, 187);
+  --cancel-button-color: rgb(173, 186, 173);
+  --cancel-button-color-hover: rgb(150, 155, 150);
+}
+
 body {
+  text-align: center;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+.default__line {
+  border-top: 0.5px solid;
+  width: 120%;
+}
+
+.default__button {
+  height: 2rem;
+  border-radius: 5px;
+  font-weight: 500;
+}
+
+.default__button:hover {
+  cursor: pointer;
+  background-color: var(--ok-button-color-hover);
+}
+
+.todo__button {
+  height: 2rem;
+  width: 3rem;
+  border-radius: 5px;
+  border: 0.5px solid;
+  font-weight: 600;
+  background-color: var(--main-background-color-dark);
+}
+
+.todo__button:hover {
+  cursor: pointer;
+  background-color: var(--main-button-color-hover);
+}
+
+.todo__button__ok {
+  height: 2rem;
+  width: 3rem;
+  border-radius: 5px;
+  border: 0.5px solid;
+  font-weight: 600;
+  margin: 0 0.5rem;
+  background-color: var(--ok-button-color);
+}
+
+.todo__button__ok:hover {
+  cursor: pointer;
+  background-color: var(--ok-button-color-hover);
+}
+
+.todo__button__cancel {
+  height: 2rem;
+  width: 3rem;
+  border-radius: 5px;
+  border: 0.5px solid;
+  font-weight: 600;
+  margin: 0 0.5rem;
+  background-color: var(--cancel-button-color);
+}
+
+.todo__button__cancel:hover {
+  cursor: pointer;
+  background-color: var(--cancel-button-color-hover);
 }

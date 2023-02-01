@@ -1,0 +1,8 @@
+.homeComponent {
+  width: 80%;
+  max-width: 45rem;
+  margin: 1rem auto;
+  padding: 1rem;
+  background-color: var(--main-background-color-dark);
+  border-radius: 5px;
+}

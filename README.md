@@ -1,70 +1,64 @@
-# Getting Started with Create React App
+# 소개
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+지원자 최명식입니다.
 
-## Available Scripts
+깃허브링크 : ...
 
-In the project directory, you can run:
+배포링크 : ...
 
-### `npm start`
+# 사용된 기술
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+```
+react-router
+react
+fetch API
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+# 폴더 구성
+```
 
-### `npm test`
+```
+root
+├─ public
+└── src
+    ├─ components
+    │ ├─ home
+    │ ├─ signin
+    │ ├─ signup
+    │ └─ todo
+    └── pages
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```
 
-### `npm run build`
+# 프로젝트 실행 방법
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. git clone
+2. cd 프로젝트명 을 통해, 해당 프로젝트로 이동
+3. npm install
+4. npm start
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### 데모영상은 배포 링크로 대체합니다.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# 로직
 
-### `npm run eject`
+#### todolist 받아오기
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+<hr>
+#### todolist 생성하기
+...
+<hr>
+#### todolist 삭제하기
+..
+<hr>
+#### todolist 업데이트하기
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- <strong>checkbox 의 경우</strong>
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+1.  해당 checkbox 가 check되어있는지, event.targe.check 를 사용하여 함수를 실행합니다.
+    함수안에서 각 값을 가지고 fetch 를 실행합니다.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- <strong>값의 변화의 경우</strong>
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+1.  "수정" 버튼을 누를시, EditMode State 에 누른 버튼이 존재하는 List 의 id 를 저장합니다.
+2.  만약 EditMode 의 값이 현재 자기 자신이 속한 List의 id 와 같다면 해당 List 에서는 span 이 Input 으로 변경됩니다.
+3.  Edit된 Input 의 값을 State 안에 저장하고, "제출" 버튼을 누른다면 updateHandler 를 사용하여 fetch 합니다.
+4.  "제출" 이나 "취소" 를 누를경우, Edit 된 Input State 의 값을 비우고, EditMode 안의 값을 null 로 만들어, EditMode 를 종료합니다.
