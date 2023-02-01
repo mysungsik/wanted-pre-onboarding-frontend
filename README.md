@@ -2,9 +2,9 @@
 
 지원자 최명식입니다.
 
-깃허브링크 : ...
+깃허브링크 : https://github.com/mysungsik/wanted-pre-onboarding-frontend
 
-배포링크 : ...
+배포링크 : https://wanted-pre-onboarding-frontend-pcgt-6oibwfojy-mysungsik.vercel.app/
 
 # 사용된 기술
 
@@ -12,7 +12,6 @@
 react-router
 react
 fetch API
-
 ```
 
 # 폴더 구성
